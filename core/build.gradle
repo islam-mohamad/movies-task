@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.islam.tasks.core'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 33
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //Coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+
+    //Retrofit
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    api "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    api "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
+    api "com.google.code.gson:gson:$gson_version"
+    api "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$coroutines_converter_version"
+
+    //Fragment
+    api "androidx.fragment:fragment-ktx:$fragmetnKTX_version"
+
+    //Navigation
+    api "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    api "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //timber
+    api "com.jakewharton.timber:timber:$timber_version"
+
+    //hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+
+    //Picasso
+    api "com.squareup.picasso:picasso:$picasso_version"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_test_version"
+    implementation "junit:junit:$jUnit_version"
+}

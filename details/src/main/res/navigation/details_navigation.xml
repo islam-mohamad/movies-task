@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/details_navigation"
+    app:startDestination="@id/movie_details_fragment">
+    <fragment
+        android:id="@+id/movie_details_fragment"
+        android:name="com.islam.tasks.details.presentation.view.MovieDetailsFragment"
+        android:label="Movie Details Fragment">
+        <argument
+            android:name="id"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <deepLink app:uri="moviedetails://movie/{id}" />
+    </fragment>
+</navigation>

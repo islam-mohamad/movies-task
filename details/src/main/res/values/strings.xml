@@ -1,0 +1,3 @@
+<resources>
+    <string name="deeplink_movie_details">moviedetails://movie/%1$d</string>
+</resources>

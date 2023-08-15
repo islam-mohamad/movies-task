@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/movies_navigation"
+    app:startDestination="@id/movies_fragment">
+    <fragment
+        android:id="@+id/movies_fragment"
+        android:name="com.islam.tasks.movies.presentation.view.MoviesFragment"
+        android:label="Movies Fragment" >
+
+        <deepLink
+            app:uri="movies://com.yassir.app/movies_list" />
+    </fragment>
+</navigation>
